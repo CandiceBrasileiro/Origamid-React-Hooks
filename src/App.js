@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Modal from './Modal';
+import ButtonModal from './ButtonModal';
 
-function App() {
+const App = () => {
+  const [modal, setModal] = React.useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Modal modal={modal} setModal={setModal} />
+      <ButtonModal setModal={setModal} />
     </div>
   );
-}
+};
+
+// const App = () => {
+ 
+//   const [ativo, setAtivo] = React.useState(true);
+ 
+ // const ativoHook = React.useState(false);
+ // const ativoValor = ativoHook[0];
+ // const atualizaValor = ativoHook[1];
+  
+ // function handleClick() {
+ // atualizaValor(!ativoValor);
+ // }
+
+//   return( 
+//     <button onClick={() => setAtivo(!ativo)}>{ativo ? 'Botão Ativo' : 'Botão Inativo' }</button>
+//   );
+// };
+
+
+
 
 export default App;
